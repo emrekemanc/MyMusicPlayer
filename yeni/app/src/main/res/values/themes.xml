@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Yeni" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#7C563C</item>
+        <item name="colorPrimaryVariant">#C88364</item>
+        <item name="colorOnPrimary">#E1C2B0</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#AF795C</item>
+        <item name="colorSecondaryVariant">#873001</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+</resources>
