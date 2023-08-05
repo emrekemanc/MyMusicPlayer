@@ -70,10 +70,11 @@ private lateinit var binding: ActivityKayitEklemeEkraniBinding
                             if (Build.VERSION.SDK_INT>=28){
                                 val source=ImageDecoder.createSource(this@KayitEklemeEkrani.contentResolver,imageData)
                                 bitmap=ImageDecoder.decodeBitmap(source)
-                                binding.imageView.setImageBitmap(bitmap)
+                                binding.imageView.setImageBitmap(resimküçüt(bitmap!!,200))
                             }else{
                                 bitmap=MediaStore.Images.Media.getBitmap(contentResolver,imageData)
-                                binding.imageView.setImageBitmap(bitmap)
+                                binding.imageView.setImageBitmap(resimküçüt(bitmap!!,200))
+
                             }
                         }catch (_:Exception){ }} } } }
         permissionLauncher=registerForActivityResult(ActivityResultContracts.RequestPermission()){result->
@@ -142,12 +143,12 @@ private lateinit var binding: ActivityKayitEklemeEkraniBinding
         var height=ımage.height
         val bitmaratio:Double=width.toDouble()/height.toDouble()
 
-        if (bitmaratio<1){
+        if (bitmaratio>1){
             height=maxsize
             val yeniWidth=height*bitmaratio
             width=yeniWidth.toInt()
 
-        }else if (bitmaratio>1){
+        }else if (bitmaratio<1){
             width=maxsize
             val yeniHeight=width*bitmaratio
             height=yeniHeight.toInt()
